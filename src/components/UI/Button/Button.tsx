@@ -1,5 +1,5 @@
+import { ButtonProps } from '@/types/props/ButtonProps'
 import { FC } from 'react'
-import { ButtonProps } from '../../../types/props/ButtonProps'
 import { Wrapper } from './Button.styled'
 
 const Button: FC<ButtonProps> = ({

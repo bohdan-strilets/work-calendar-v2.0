@@ -1,5 +1,5 @@
+import { WrapperProps } from '@/types/props/ButtonProps'
 import styled from '@emotion/styled'
-import { WrapperProps } from '../../../types/props/ButtonProps'
 
 export const Wrapper = styled.button<WrapperProps>`
 	width: ${({ width }) => (width ? width : '100%')};
