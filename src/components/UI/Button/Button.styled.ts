@@ -14,10 +14,14 @@ export const Wrapper = styled.button<WrapperProps>`
 	background-color: var(--dark-to-light);
 	color: var(--light-to-dark);
 	text-shadow: var(--text-shadow);
-	box-shadow: var(--box-shadow), inset 0px 23px 0px rgba(255, 255, 255, 0.07);
+	box-shadow:
+		var(--box-shadow),
+		inset 0px 23px 0px rgba(255, 255, 255, 0.07);
 
 	cursor: pointer;
-	transition: background-color var(--hover-effect), color var(--hover-effect);
+	transition:
+		background-color var(--hover-effect),
+		color var(--hover-effect);
 
 	:hover,
 	:focus {
