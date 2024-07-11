@@ -1,32 +1,33 @@
+import { MonthYear } from '@/types/types/MonthYear'
 import { useState } from 'react'
 
 const useRenderCalendar = (date: Date) => {
 	const [currentDate, setCurrentDate] = useState(date)
 
-	const getMonthYear = () => {
+	const getMonthYear = (): MonthYear => {
 		const year = currentDate.getFullYear()
 		const month = currentDate.getMonth()
 		return { year, month }
 	}
 
-	const handleNextMonthClick = () => {
+	const handleNextMonthClick = (): void => {
 		const monthYear = getMonthYear()
 		const nextMonth = new Date(monthYear.year, monthYear.month + 1)
 		setCurrentDate(nextMonth)
 	}
 
-	const handlePrevMonthClick = () => {
+	const handlePrevMonthClick = (): void => {
 		const monthYear = getMonthYear()
 		const prevMonth = new Date(monthYear.year, monthYear.month - 1)
 		setCurrentDate(prevMonth)
 	}
 
-	const getNumberDaysInMonth = () => {
+	const getNumberDaysInMonth = (): number => {
 		const monthYear = getMonthYear()
 		return new Date(monthYear.year, monthYear.month + 1, 0).getDate()
 	}
 
-	const getStartWeek = () => {
+	const getStartWeek = (): number => {
 		const monthYear = getMonthYear()
 		const firstDayOfMonth = new Date(monthYear.year, monthYear.month, 1)
 		const dayOfWeek = firstDayOfMonth.getDay() - 1
@@ -35,14 +36,14 @@ const useRenderCalendar = (date: Date) => {
 		return dayOfWeek
 	}
 
-	const getCurrentDay = () => {
+	const getCurrentDay = (): number => {
 		const currentDay = new Date(currentDate).getDay() - 1
 
 		if (currentDay === -1) return 6
 		return currentDay
 	}
 
-	const getDaysOfMonth = () => {
+	const getDaysOfMonth = (): (undefined[] | Date[])[] => {
 		const daysOfMonth: (undefined[] | Date[])[] = []
 		const daysInWeek = 7
 		const numberDaysInMonth = getNumberDaysInMonth()
