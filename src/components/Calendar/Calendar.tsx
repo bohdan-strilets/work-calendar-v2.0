@@ -24,6 +24,7 @@ const Calendar: FC = () => {
 		getMonthYear,
 		handleNextMonthClick,
 		handlePrevMonthClick,
+		getCurrentDay,
 	} = useRenderCalendar(date)
 
 	const weeksFromSelectedMonth = getDaysOfMonth()
@@ -51,7 +52,7 @@ const Calendar: FC = () => {
 
 			<WeekDays>
 				{DaysWeek.map(({ id, name }) => (
-					<WeekDayName currentDay={true} key={id}>
+					<WeekDayName currentDay={getCurrentDay() === id} key={id}>
 						<WeekDayText>{name}</WeekDayText>
 					</WeekDayName>
 				))}

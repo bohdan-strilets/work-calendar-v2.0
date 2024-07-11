@@ -35,6 +35,13 @@ const useRenderCalendar = (date: Date) => {
 		return dayOfWeek
 	}
 
+	const getCurrentDay = () => {
+		const currentDay = new Date(currentDate).getDay() - 1
+
+		if (currentDay === -1) return 6
+		return currentDay
+	}
+
 	const getDaysOfMonth = () => {
 		const daysOfMonth: (undefined[] | Date[])[] = []
 		const daysInWeek = 7
@@ -69,6 +76,7 @@ const useRenderCalendar = (date: Date) => {
 		getMonthYear,
 		handleNextMonthClick,
 		handlePrevMonthClick,
+		getCurrentDay,
 	}
 }
 
