@@ -19,6 +19,19 @@ export const ControllerItem = styled.li`
 	font-weight: 700;
 `
 
+export const ControllerBtn = styled.button`
+	background-color: transparent;
+	color: var(--light-green-color);
+
+	cursor: pointer;
+	transition: color var(--hover-effect);
+
+	:hover,
+	:focus {
+		color: var(--gray-color);
+	}
+`
+
 export const WeekDays = styled.ul`
 	display: flex;
 	align-items: center;
